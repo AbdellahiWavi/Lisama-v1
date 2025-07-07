@@ -12,6 +12,9 @@ extension AllIncidentResponseMapper on AllIncidentResponse {
       dateTraitement: dateTraitement,
       status: status,
       url: url,
+      county: county,
+      userLocation: userLocation.toDomain(),
+      degree: degree.toDomain(),
       typeCas: typeCas.toDomain(),
       client: client.toDomain(),
     );
@@ -23,6 +26,24 @@ extension TypeCasMapper on TypeCas {
     return domain.TypeCas(
       idCas: idCas,
       type: type
+    );
+  }
+}
+
+extension UserLocationMapper on UserLocation {
+  domain.UserLocation toDomain() {
+    return domain.UserLocation(
+      latitude: latitude,
+      longitude: longitude,
+    );
+  }
+}
+
+extension DegreeMapper on Degree {
+  domain.Degree toDomain() {
+    return domain.Degree(
+        id: id,
+        typeDegree: typeDegree
     );
   }
 }

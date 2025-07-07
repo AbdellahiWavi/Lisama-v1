@@ -6,9 +6,9 @@ import 'package:gestion_cas/features/add_incident/data/dtos/response/response_ty
 import 'package:gestion_cas/features/add_incident/data/repository/iadd_incident_repository.dart';
 import 'package:gestion_cas/features/add_incident/domain/mapper/iadd_incident_model_mapper.dart';
 import 'package:gestion_cas/features/add_incident/domain/model/add_incident_model.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_client/get_client_model.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_degree/degree_model.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_type_cas/type_cas_model.dart';
+import 'package:gestion_cas/features/model_client/get_client_model.dart';
+import 'package:gestion_cas/features/model_degree/degree_model.dart';
+import 'package:gestion_cas/features/model_type_cas/type_cas_model.dart';
 
 import '../data/repository/add_incident_repository.dart';
 import '../domain/mapper/extension_mapper/extension_mapping.dart';

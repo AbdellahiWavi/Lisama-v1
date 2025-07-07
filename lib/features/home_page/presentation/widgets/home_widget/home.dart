@@ -246,9 +246,10 @@ class _Home extends ConsumerState<Home> {
                               size: 20,
                             ),
                           ),
+                          if (incident.status == "en cours")
                           IconButton(
                             onPressed: () {
-                              debugPrint("icon modify clicked");
+                              context.push('/updateIncident', extra: incident);
                             },
                             icon: Icon(
                               Icons.edit_outlined,

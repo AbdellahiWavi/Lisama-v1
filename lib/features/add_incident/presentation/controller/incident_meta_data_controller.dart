@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_client/get_client_model.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_type_cas/type_cas_model.dart';
+import 'package:gestion_cas/features/model_client/get_client_model.dart';
+import 'package:gestion_cas/features/model_degree/degree_model.dart';
+import 'package:gestion_cas/features/model_type_cas/type_cas_model.dart';
 import '../../../../core/data/remote/token/token_service.dart';
-import '../../domain/model/model_degree/degree_model.dart';
 import '../state/state_meta_data/incident_meta_data_state.dart';
 import 'package:gestion_cas/features/add_incident/applications/add_incident_service.dart';
 

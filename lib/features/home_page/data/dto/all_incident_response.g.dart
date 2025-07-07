@@ -10,15 +10,17 @@ _AllIncidentResponse _$AllIncidentResponseFromJson(Map<String, dynamic> json) =>
     _AllIncidentResponse(
       id: (json['id'] as num).toInt(),
       decrireAction: json['decrireAction'] as String,
+      userLocation: UserLocation.fromJson(
+        json['userLocation'] as Map<String, dynamic>,
+      ),
       url: json['url'] as String,
       county: json['county'] as String?,
       active: json['active'] as bool,
       dateCreation: DateTime.parse(json['dateCreation'] as String),
       dateTraitement: json['dateTraitement'],
-      dernierChEta:
-          json['dernierChEta'] == null
-              ? null
-              : DateTime.parse(json['dernierChEta'] as String),
+      dernierChEta: json['dernierChEta'] == null
+          ? null
+          : DateTime.parse(json['dernierChEta'] as String),
       status: json['status'] as String,
       degree: Degree.fromJson(json['degree'] as Map<String, dynamic>),
       typeCas: TypeCas.fromJson(json['typeCas'] as Map<String, dynamic>),
@@ -30,6 +32,7 @@ Map<String, dynamic> _$AllIncidentResponseToJson(
 ) => <String, dynamic>{
   'id': instance.id,
   'decrireAction': instance.decrireAction,
+  'userLocation': instance.userLocation,
   'url': instance.url,
   'county': instance.county,
   'active': instance.active,
@@ -81,3 +84,15 @@ Map<String, dynamic> _$TypeCasToJson(_TypeCas instance) => <String, dynamic>{
   'type': instance.type,
   'active': instance.active,
 };
+
+_UserLocation _$UserLocationFromJson(Map<String, dynamic> json) =>
+    _UserLocation(
+      latitude: (json['latitude'] as num).toDouble(),
+      longitude: (json['longitude'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$UserLocationToJson(_UserLocation instance) =>
+    <String, dynamic>{
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+    };

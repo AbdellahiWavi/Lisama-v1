@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AllIncidentResponse {
 
-@JsonKey(name: "id") int get id;@JsonKey(name: "decrireAction") String get decrireAction;@JsonKey(name: "url") String get url;@JsonKey(name: "county") String? get county;@JsonKey(name: "active") bool get active;@JsonKey(name: "dateCreation") DateTime get dateCreation;@JsonKey(name: "dateTraitement") dynamic get dateTraitement;@JsonKey(name: "dernierChEta") DateTime? get dernierChEta;@JsonKey(name: "status") String get status;@JsonKey(name: "degree") Degree get degree;@JsonKey(name: "typeCas") TypeCas get typeCas;@JsonKey(name: "client") Client get client;
+@JsonKey(name: "id") int get id;@JsonKey(name: "decrireAction") String get decrireAction;@JsonKey(name: "userLocation") UserLocation get userLocation;@JsonKey(name: "url") String get url;@JsonKey(name: "county") String? get county;@JsonKey(name: "active") bool get active;@JsonKey(name: "dateCreation") DateTime get dateCreation;@JsonKey(name: "dateTraitement") dynamic get dateTraitement;@JsonKey(name: "dernierChEta") DateTime? get dernierChEta;@JsonKey(name: "status") String get status;@JsonKey(name: "degree") Degree get degree;@JsonKey(name: "typeCas") TypeCas get typeCas;@JsonKey(name: "client") Client get client;
 /// Create a copy of AllIncidentResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -29,16 +29,16 @@ $AllIncidentResponseCopyWith<AllIncidentResponse> get copyWith => _$AllIncidentR
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AllIncidentResponse&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.url, url) || other.url == url)&&(identical(other.county, county) || other.county == county)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.dernierChEta, dernierChEta) || other.dernierChEta == dernierChEta)&&(identical(other.status, status) || other.status == status)&&(identical(other.degree, degree) || other.degree == degree)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AllIncidentResponse&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.userLocation, userLocation) || other.userLocation == userLocation)&&(identical(other.url, url) || other.url == url)&&(identical(other.county, county) || other.county == county)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.dernierChEta, dernierChEta) || other.dernierChEta == dernierChEta)&&(identical(other.status, status) || other.status == status)&&(identical(other.degree, degree) || other.degree == degree)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,decrireAction,url,county,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),dernierChEta,status,degree,typeCas,client);
+int get hashCode => Object.hash(runtimeType,id,decrireAction,userLocation,url,county,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),dernierChEta,status,degree,typeCas,client);
 
 @override
 String toString() {
-  return 'AllIncidentResponse(id: $id, decrireAction: $decrireAction, url: $url, county: $county, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, dernierChEta: $dernierChEta, status: $status, degree: $degree, typeCas: $typeCas, client: $client)';
+  return 'AllIncidentResponse(id: $id, decrireAction: $decrireAction, userLocation: $userLocation, url: $url, county: $county, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, dernierChEta: $dernierChEta, status: $status, degree: $degree, typeCas: $typeCas, client: $client)';
 }
 
 
@@ -49,11 +49,11 @@ abstract mixin class $AllIncidentResponseCopyWith<$Res>  {
   factory $AllIncidentResponseCopyWith(AllIncidentResponse value, $Res Function(AllIncidentResponse) _then) = _$AllIncidentResponseCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: "id") int id,@JsonKey(name: "decrireAction") String decrireAction,@JsonKey(name: "url") String url,@JsonKey(name: "county") String? county,@JsonKey(name: "active") bool active,@JsonKey(name: "dateCreation") DateTime dateCreation,@JsonKey(name: "dateTraitement") dynamic dateTraitement,@JsonKey(name: "dernierChEta") DateTime? dernierChEta,@JsonKey(name: "status") String status,@JsonKey(name: "degree") Degree degree,@JsonKey(name: "typeCas") TypeCas typeCas,@JsonKey(name: "client") Client client
+@JsonKey(name: "id") int id,@JsonKey(name: "decrireAction") String decrireAction,@JsonKey(name: "userLocation") UserLocation userLocation,@JsonKey(name: "url") String url,@JsonKey(name: "county") String? county,@JsonKey(name: "active") bool active,@JsonKey(name: "dateCreation") DateTime dateCreation,@JsonKey(name: "dateTraitement") dynamic dateTraitement,@JsonKey(name: "dernierChEta") DateTime? dernierChEta,@JsonKey(name: "status") String status,@JsonKey(name: "degree") Degree degree,@JsonKey(name: "typeCas") TypeCas typeCas,@JsonKey(name: "client") Client client
 });
 
 
-$DegreeCopyWith<$Res> get degree;$TypeCasCopyWith<$Res> get typeCas;$ClientCopyWith<$Res> get client;
+$UserLocationCopyWith<$Res> get userLocation;$DegreeCopyWith<$Res> get degree;$TypeCasCopyWith<$Res> get typeCas;$ClientCopyWith<$Res> get client;
 
 }
 /// @nodoc
@@ -66,11 +66,12 @@ class _$AllIncidentResponseCopyWithImpl<$Res>
 
 /// Create a copy of AllIncidentResponse
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? decrireAction = null,Object? url = null,Object? county = freezed,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? dernierChEta = freezed,Object? status = null,Object? degree = null,Object? typeCas = null,Object? client = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? decrireAction = null,Object? userLocation = null,Object? url = null,Object? county = freezed,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? dernierChEta = freezed,Object? status = null,Object? degree = null,Object? typeCas = null,Object? client = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,decrireAction: null == decrireAction ? _self.decrireAction : decrireAction // ignore: cast_nullable_to_non_nullable
-as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,userLocation: null == userLocation ? _self.userLocation : userLocation // ignore: cast_nullable_to_non_nullable
+as UserLocation,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as String,county: freezed == county ? _self.county : county // ignore: cast_nullable_to_non_nullable
 as String?,active: null == active ? _self.active : active // ignore: cast_nullable_to_non_nullable
 as bool,dateCreation: null == dateCreation ? _self.dateCreation : dateCreation // ignore: cast_nullable_to_non_nullable
@@ -84,6 +85,15 @@ as Client,
   ));
 }
 /// Create a copy of AllIncidentResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserLocationCopyWith<$Res> get userLocation {
+  
+  return $UserLocationCopyWith<$Res>(_self.userLocation, (value) {
+    return _then(_self.copyWith(userLocation: value));
+  });
+}/// Create a copy of AllIncidentResponse
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -118,11 +128,12 @@ $ClientCopyWith<$Res> get client {
 @JsonSerializable()
 
 class _AllIncidentResponse implements AllIncidentResponse {
-  const _AllIncidentResponse({@JsonKey(name: "id") required this.id, @JsonKey(name: "decrireAction") required this.decrireAction, @JsonKey(name: "url") required this.url, @JsonKey(name: "county") this.county, @JsonKey(name: "active") required this.active, @JsonKey(name: "dateCreation") required this.dateCreation, @JsonKey(name: "dateTraitement") required this.dateTraitement, @JsonKey(name: "dernierChEta") required this.dernierChEta, @JsonKey(name: "status") required this.status, @JsonKey(name: "degree") required this.degree, @JsonKey(name: "typeCas") required this.typeCas, @JsonKey(name: "client") required this.client});
+  const _AllIncidentResponse({@JsonKey(name: "id") required this.id, @JsonKey(name: "decrireAction") required this.decrireAction, @JsonKey(name: "userLocation") required this.userLocation, @JsonKey(name: "url") required this.url, @JsonKey(name: "county") this.county, @JsonKey(name: "active") required this.active, @JsonKey(name: "dateCreation") required this.dateCreation, @JsonKey(name: "dateTraitement") required this.dateTraitement, @JsonKey(name: "dernierChEta") required this.dernierChEta, @JsonKey(name: "status") required this.status, @JsonKey(name: "degree") required this.degree, @JsonKey(name: "typeCas") required this.typeCas, @JsonKey(name: "client") required this.client});
   factory _AllIncidentResponse.fromJson(Map<String, dynamic> json) => _$AllIncidentResponseFromJson(json);
 
 @override@JsonKey(name: "id") final  int id;
 @override@JsonKey(name: "decrireAction") final  String decrireAction;
+@override@JsonKey(name: "userLocation") final  UserLocation userLocation;
 @override@JsonKey(name: "url") final  String url;
 @override@JsonKey(name: "county") final  String? county;
 @override@JsonKey(name: "active") final  bool active;
@@ -147,16 +158,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AllIncidentResponse&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.url, url) || other.url == url)&&(identical(other.county, county) || other.county == county)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.dernierChEta, dernierChEta) || other.dernierChEta == dernierChEta)&&(identical(other.status, status) || other.status == status)&&(identical(other.degree, degree) || other.degree == degree)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AllIncidentResponse&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.userLocation, userLocation) || other.userLocation == userLocation)&&(identical(other.url, url) || other.url == url)&&(identical(other.county, county) || other.county == county)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.dernierChEta, dernierChEta) || other.dernierChEta == dernierChEta)&&(identical(other.status, status) || other.status == status)&&(identical(other.degree, degree) || other.degree == degree)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,decrireAction,url,county,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),dernierChEta,status,degree,typeCas,client);
+int get hashCode => Object.hash(runtimeType,id,decrireAction,userLocation,url,county,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),dernierChEta,status,degree,typeCas,client);
 
 @override
 String toString() {
-  return 'AllIncidentResponse(id: $id, decrireAction: $decrireAction, url: $url, county: $county, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, dernierChEta: $dernierChEta, status: $status, degree: $degree, typeCas: $typeCas, client: $client)';
+  return 'AllIncidentResponse(id: $id, decrireAction: $decrireAction, userLocation: $userLocation, url: $url, county: $county, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, dernierChEta: $dernierChEta, status: $status, degree: $degree, typeCas: $typeCas, client: $client)';
 }
 
 
@@ -167,11 +178,11 @@ abstract mixin class _$AllIncidentResponseCopyWith<$Res> implements $AllIncident
   factory _$AllIncidentResponseCopyWith(_AllIncidentResponse value, $Res Function(_AllIncidentResponse) _then) = __$AllIncidentResponseCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: "id") int id,@JsonKey(name: "decrireAction") String decrireAction,@JsonKey(name: "url") String url,@JsonKey(name: "county") String? county,@JsonKey(name: "active") bool active,@JsonKey(name: "dateCreation") DateTime dateCreation,@JsonKey(name: "dateTraitement") dynamic dateTraitement,@JsonKey(name: "dernierChEta") DateTime? dernierChEta,@JsonKey(name: "status") String status,@JsonKey(name: "degree") Degree degree,@JsonKey(name: "typeCas") TypeCas typeCas,@JsonKey(name: "client") Client client
+@JsonKey(name: "id") int id,@JsonKey(name: "decrireAction") String decrireAction,@JsonKey(name: "userLocation") UserLocation userLocation,@JsonKey(name: "url") String url,@JsonKey(name: "county") String? county,@JsonKey(name: "active") bool active,@JsonKey(name: "dateCreation") DateTime dateCreation,@JsonKey(name: "dateTraitement") dynamic dateTraitement,@JsonKey(name: "dernierChEta") DateTime? dernierChEta,@JsonKey(name: "status") String status,@JsonKey(name: "degree") Degree degree,@JsonKey(name: "typeCas") TypeCas typeCas,@JsonKey(name: "client") Client client
 });
 
 
-@override $DegreeCopyWith<$Res> get degree;@override $TypeCasCopyWith<$Res> get typeCas;@override $ClientCopyWith<$Res> get client;
+@override $UserLocationCopyWith<$Res> get userLocation;@override $DegreeCopyWith<$Res> get degree;@override $TypeCasCopyWith<$Res> get typeCas;@override $ClientCopyWith<$Res> get client;
 
 }
 /// @nodoc
@@ -184,11 +195,12 @@ class __$AllIncidentResponseCopyWithImpl<$Res>
 
 /// Create a copy of AllIncidentResponse
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? decrireAction = null,Object? url = null,Object? county = freezed,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? dernierChEta = freezed,Object? status = null,Object? degree = null,Object? typeCas = null,Object? client = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? decrireAction = null,Object? userLocation = null,Object? url = null,Object? county = freezed,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? dernierChEta = freezed,Object? status = null,Object? degree = null,Object? typeCas = null,Object? client = null,}) {
   return _then(_AllIncidentResponse(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,decrireAction: null == decrireAction ? _self.decrireAction : decrireAction // ignore: cast_nullable_to_non_nullable
-as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,userLocation: null == userLocation ? _self.userLocation : userLocation // ignore: cast_nullable_to_non_nullable
+as UserLocation,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as String,county: freezed == county ? _self.county : county // ignore: cast_nullable_to_non_nullable
 as String?,active: null == active ? _self.active : active // ignore: cast_nullable_to_non_nullable
 as bool,dateCreation: null == dateCreation ? _self.dateCreation : dateCreation // ignore: cast_nullable_to_non_nullable
@@ -203,6 +215,15 @@ as Client,
 }
 
 /// Create a copy of AllIncidentResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserLocationCopyWith<$Res> get userLocation {
+  
+  return $UserLocationCopyWith<$Res>(_self.userLocation, (value) {
+    return _then(_self.copyWith(userLocation: value));
+  });
+}/// Create a copy of AllIncidentResponse
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -649,6 +670,142 @@ idCas: null == idCas ? _self.idCas : idCas // ignore: cast_nullable_to_non_nulla
 as int,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,active: null == active ? _self.active : active // ignore: cast_nullable_to_non_nullable
 as bool,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$UserLocation {
+
+@JsonKey(name: "latitude") double get latitude;@JsonKey(name: "longitude") double get longitude;
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserLocationCopyWith<UserLocation> get copyWith => _$UserLocationCopyWithImpl<UserLocation>(this as UserLocation, _$identity);
+
+  /// Serializes this UserLocation to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserLocation&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,latitude,longitude);
+
+@override
+String toString() {
+  return 'UserLocation(latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UserLocationCopyWith<$Res>  {
+  factory $UserLocationCopyWith(UserLocation value, $Res Function(UserLocation) _then) = _$UserLocationCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: "latitude") double latitude,@JsonKey(name: "longitude") double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserLocationCopyWithImpl<$Res>
+    implements $UserLocationCopyWith<$Res> {
+  _$UserLocationCopyWithImpl(this._self, this._then);
+
+  final UserLocation _self;
+  final $Res Function(UserLocation) _then;
+
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? latitude = null,Object? longitude = null,}) {
+  return _then(_self.copyWith(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+}
+
+
+/// @nodoc
+@JsonSerializable()
+
+class _UserLocation implements UserLocation {
+  const _UserLocation({@JsonKey(name: "latitude") required this.latitude, @JsonKey(name: "longitude") required this.longitude});
+  factory _UserLocation.fromJson(Map<String, dynamic> json) => _$UserLocationFromJson(json);
+
+@override@JsonKey(name: "latitude") final  double latitude;
+@override@JsonKey(name: "longitude") final  double longitude;
+
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UserLocationCopyWith<_UserLocation> get copyWith => __$UserLocationCopyWithImpl<_UserLocation>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UserLocationToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserLocation&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,latitude,longitude);
+
+@override
+String toString() {
+  return 'UserLocation(latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UserLocationCopyWith<$Res> implements $UserLocationCopyWith<$Res> {
+  factory _$UserLocationCopyWith(_UserLocation value, $Res Function(_UserLocation) _then) = __$UserLocationCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: "latitude") double latitude,@JsonKey(name: "longitude") double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class __$UserLocationCopyWithImpl<$Res>
+    implements _$UserLocationCopyWith<$Res> {
+  __$UserLocationCopyWithImpl(this._self, this._then);
+
+  final _UserLocation _self;
+  final $Res Function(_UserLocation) _then;
+
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,}) {
+  return _then(_UserLocation(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
   ));
 }
 

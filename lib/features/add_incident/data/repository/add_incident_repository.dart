@@ -8,7 +8,7 @@ import 'package:gestion_cas/features/add_incident/data/dtos/response/response_de
 import 'package:gestion_cas/features/add_incident/data/dtos/response/response_type_cas/all_type_cas_response.dart';
 import 'package:gestion_cas/features/add_incident/data/repository/iadd_incident_repository.dart';
 import 'package:gestion_cas/features/add_incident/data/source/remote/add_incident_api.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_client/get_client_model.dart';
+import 'package:gestion_cas/features/model_client/get_client_model.dart';
 
 final addIncidentRepositoryProvider = Provider<IAddIncidentRepository>((ref) {
   final addIncidentApi = ref.watch(addIncidentApiProvider);

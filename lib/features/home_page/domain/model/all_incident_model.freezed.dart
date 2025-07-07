@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AllIncidentModel {
 
- int get id; String get decrireAction; bool get active; DateTime get dateCreation; dynamic get dateTraitement; String get status; String get url; TypeCas get typeCas; Client get client;
+ int get id; String get decrireAction; bool get active; DateTime get dateCreation; dynamic get dateTraitement; String get status; UserLocation get userLocation; String? get county; String get url; Degree get degree; TypeCas get typeCas; Client get client;
 /// Create a copy of AllIncidentModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,16 +26,16 @@ $AllIncidentModelCopyWith<AllIncidentModel> get copyWith => _$AllIncidentModelCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AllIncidentModel&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.status, status) || other.status == status)&&(identical(other.url, url) || other.url == url)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AllIncidentModel&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.status, status) || other.status == status)&&(identical(other.userLocation, userLocation) || other.userLocation == userLocation)&&(identical(other.county, county) || other.county == county)&&(identical(other.url, url) || other.url == url)&&(identical(other.degree, degree) || other.degree == degree)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,decrireAction,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),status,url,typeCas,client);
+int get hashCode => Object.hash(runtimeType,id,decrireAction,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),status,userLocation,county,url,degree,typeCas,client);
 
 @override
 String toString() {
-  return 'AllIncidentModel(id: $id, decrireAction: $decrireAction, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, status: $status, url: $url, typeCas: $typeCas, client: $client)';
+  return 'AllIncidentModel(id: $id, decrireAction: $decrireAction, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, status: $status, userLocation: $userLocation, county: $county, url: $url, degree: $degree, typeCas: $typeCas, client: $client)';
 }
 
 
@@ -46,11 +46,11 @@ abstract mixin class $AllIncidentModelCopyWith<$Res>  {
   factory $AllIncidentModelCopyWith(AllIncidentModel value, $Res Function(AllIncidentModel) _then) = _$AllIncidentModelCopyWithImpl;
 @useResult
 $Res call({
- int id, String decrireAction, bool active, DateTime dateCreation, dynamic dateTraitement, String status, String url, TypeCas typeCas, Client client
+ int id, String decrireAction, bool active, DateTime dateCreation, dynamic dateTraitement, String status, UserLocation userLocation, String? county, String url, Degree degree, TypeCas typeCas, Client client
 });
 
 
-$TypeCasCopyWith<$Res> get typeCas;$ClientCopyWith<$Res> get client;
+$UserLocationCopyWith<$Res> get userLocation;$DegreeCopyWith<$Res> get degree;$TypeCasCopyWith<$Res> get typeCas;$ClientCopyWith<$Res> get client;
 
 }
 /// @nodoc
@@ -63,7 +63,7 @@ class _$AllIncidentModelCopyWithImpl<$Res>
 
 /// Create a copy of AllIncidentModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? decrireAction = null,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? status = null,Object? url = null,Object? typeCas = null,Object? client = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? decrireAction = null,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? status = null,Object? userLocation = null,Object? county = freezed,Object? url = null,Object? degree = null,Object? typeCas = null,Object? client = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,decrireAction: null == decrireAction ? _self.decrireAction : decrireAction // ignore: cast_nullable_to_non_nullable
@@ -71,13 +71,34 @@ as String,active: null == active ? _self.active : active // ignore: cast_nullabl
 as bool,dateCreation: null == dateCreation ? _self.dateCreation : dateCreation // ignore: cast_nullable_to_non_nullable
 as DateTime,dateTraitement: freezed == dateTraitement ? _self.dateTraitement : dateTraitement // ignore: cast_nullable_to_non_nullable
 as dynamic,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,typeCas: null == typeCas ? _self.typeCas : typeCas // ignore: cast_nullable_to_non_nullable
+as String,userLocation: null == userLocation ? _self.userLocation : userLocation // ignore: cast_nullable_to_non_nullable
+as UserLocation,county: freezed == county ? _self.county : county // ignore: cast_nullable_to_non_nullable
+as String?,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,degree: null == degree ? _self.degree : degree // ignore: cast_nullable_to_non_nullable
+as Degree,typeCas: null == typeCas ? _self.typeCas : typeCas // ignore: cast_nullable_to_non_nullable
 as TypeCas,client: null == client ? _self.client : client // ignore: cast_nullable_to_non_nullable
 as Client,
   ));
 }
 /// Create a copy of AllIncidentModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserLocationCopyWith<$Res> get userLocation {
+  
+  return $UserLocationCopyWith<$Res>(_self.userLocation, (value) {
+    return _then(_self.copyWith(userLocation: value));
+  });
+}/// Create a copy of AllIncidentModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DegreeCopyWith<$Res> get degree {
+  
+  return $DegreeCopyWith<$Res>(_self.degree, (value) {
+    return _then(_self.copyWith(degree: value));
+  });
+}/// Create a copy of AllIncidentModel
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -103,7 +124,7 @@ $ClientCopyWith<$Res> get client {
 
 
 class _AllIncidentModel implements AllIncidentModel {
-  const _AllIncidentModel({required this.id, required this.decrireAction, required this.active, required this.dateCreation, required this.dateTraitement, required this.status, required this.url, required this.typeCas, required this.client});
+  const _AllIncidentModel({required this.id, required this.decrireAction, required this.active, required this.dateCreation, required this.dateTraitement, required this.status, required this.userLocation, required this.county, required this.url, required this.degree, required this.typeCas, required this.client});
   
 
 @override final  int id;
@@ -112,7 +133,10 @@ class _AllIncidentModel implements AllIncidentModel {
 @override final  DateTime dateCreation;
 @override final  dynamic dateTraitement;
 @override final  String status;
+@override final  UserLocation userLocation;
+@override final  String? county;
 @override final  String url;
+@override final  Degree degree;
 @override final  TypeCas typeCas;
 @override final  Client client;
 
@@ -126,16 +150,16 @@ _$AllIncidentModelCopyWith<_AllIncidentModel> get copyWith => __$AllIncidentMode
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AllIncidentModel&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.status, status) || other.status == status)&&(identical(other.url, url) || other.url == url)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AllIncidentModel&&(identical(other.id, id) || other.id == id)&&(identical(other.decrireAction, decrireAction) || other.decrireAction == decrireAction)&&(identical(other.active, active) || other.active == active)&&(identical(other.dateCreation, dateCreation) || other.dateCreation == dateCreation)&&const DeepCollectionEquality().equals(other.dateTraitement, dateTraitement)&&(identical(other.status, status) || other.status == status)&&(identical(other.userLocation, userLocation) || other.userLocation == userLocation)&&(identical(other.county, county) || other.county == county)&&(identical(other.url, url) || other.url == url)&&(identical(other.degree, degree) || other.degree == degree)&&(identical(other.typeCas, typeCas) || other.typeCas == typeCas)&&(identical(other.client, client) || other.client == client));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,decrireAction,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),status,url,typeCas,client);
+int get hashCode => Object.hash(runtimeType,id,decrireAction,active,dateCreation,const DeepCollectionEquality().hash(dateTraitement),status,userLocation,county,url,degree,typeCas,client);
 
 @override
 String toString() {
-  return 'AllIncidentModel(id: $id, decrireAction: $decrireAction, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, status: $status, url: $url, typeCas: $typeCas, client: $client)';
+  return 'AllIncidentModel(id: $id, decrireAction: $decrireAction, active: $active, dateCreation: $dateCreation, dateTraitement: $dateTraitement, status: $status, userLocation: $userLocation, county: $county, url: $url, degree: $degree, typeCas: $typeCas, client: $client)';
 }
 
 
@@ -146,11 +170,11 @@ abstract mixin class _$AllIncidentModelCopyWith<$Res> implements $AllIncidentMod
   factory _$AllIncidentModelCopyWith(_AllIncidentModel value, $Res Function(_AllIncidentModel) _then) = __$AllIncidentModelCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String decrireAction, bool active, DateTime dateCreation, dynamic dateTraitement, String status, String url, TypeCas typeCas, Client client
+ int id, String decrireAction, bool active, DateTime dateCreation, dynamic dateTraitement, String status, UserLocation userLocation, String? county, String url, Degree degree, TypeCas typeCas, Client client
 });
 
 
-@override $TypeCasCopyWith<$Res> get typeCas;@override $ClientCopyWith<$Res> get client;
+@override $UserLocationCopyWith<$Res> get userLocation;@override $DegreeCopyWith<$Res> get degree;@override $TypeCasCopyWith<$Res> get typeCas;@override $ClientCopyWith<$Res> get client;
 
 }
 /// @nodoc
@@ -163,7 +187,7 @@ class __$AllIncidentModelCopyWithImpl<$Res>
 
 /// Create a copy of AllIncidentModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? decrireAction = null,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? status = null,Object? url = null,Object? typeCas = null,Object? client = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? decrireAction = null,Object? active = null,Object? dateCreation = null,Object? dateTraitement = freezed,Object? status = null,Object? userLocation = null,Object? county = freezed,Object? url = null,Object? degree = null,Object? typeCas = null,Object? client = null,}) {
   return _then(_AllIncidentModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,decrireAction: null == decrireAction ? _self.decrireAction : decrireAction // ignore: cast_nullable_to_non_nullable
@@ -171,14 +195,35 @@ as String,active: null == active ? _self.active : active // ignore: cast_nullabl
 as bool,dateCreation: null == dateCreation ? _self.dateCreation : dateCreation // ignore: cast_nullable_to_non_nullable
 as DateTime,dateTraitement: freezed == dateTraitement ? _self.dateTraitement : dateTraitement // ignore: cast_nullable_to_non_nullable
 as dynamic,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,typeCas: null == typeCas ? _self.typeCas : typeCas // ignore: cast_nullable_to_non_nullable
+as String,userLocation: null == userLocation ? _self.userLocation : userLocation // ignore: cast_nullable_to_non_nullable
+as UserLocation,county: freezed == county ? _self.county : county // ignore: cast_nullable_to_non_nullable
+as String?,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,degree: null == degree ? _self.degree : degree // ignore: cast_nullable_to_non_nullable
+as Degree,typeCas: null == typeCas ? _self.typeCas : typeCas // ignore: cast_nullable_to_non_nullable
 as TypeCas,client: null == client ? _self.client : client // ignore: cast_nullable_to_non_nullable
 as Client,
   ));
 }
 
 /// Create a copy of AllIncidentModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserLocationCopyWith<$Res> get userLocation {
+  
+  return $UserLocationCopyWith<$Res>(_self.userLocation, (value) {
+    return _then(_self.copyWith(userLocation: value));
+  });
+}/// Create a copy of AllIncidentModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DegreeCopyWith<$Res> get degree {
+  
+  return $DegreeCopyWith<$Res>(_self.degree, (value) {
+    return _then(_self.copyWith(degree: value));
+  });
+}/// Create a copy of AllIncidentModel
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -336,6 +381,136 @@ as DateTime,
 }
 
 /// @nodoc
+mixin _$UserLocation {
+
+ double get latitude; double get longitude;
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserLocationCopyWith<UserLocation> get copyWith => _$UserLocationCopyWithImpl<UserLocation>(this as UserLocation, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserLocation&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,latitude,longitude);
+
+@override
+String toString() {
+  return 'UserLocation(latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UserLocationCopyWith<$Res>  {
+  factory $UserLocationCopyWith(UserLocation value, $Res Function(UserLocation) _then) = _$UserLocationCopyWithImpl;
+@useResult
+$Res call({
+ double latitude, double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserLocationCopyWithImpl<$Res>
+    implements $UserLocationCopyWith<$Res> {
+  _$UserLocationCopyWithImpl(this._self, this._then);
+
+  final UserLocation _self;
+  final $Res Function(UserLocation) _then;
+
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? latitude = null,Object? longitude = null,}) {
+  return _then(_self.copyWith(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+}
+
+
+/// @nodoc
+
+
+class _UserLocation implements UserLocation {
+  const _UserLocation({required this.latitude, required this.longitude});
+  
+
+@override final  double latitude;
+@override final  double longitude;
+
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UserLocationCopyWith<_UserLocation> get copyWith => __$UserLocationCopyWithImpl<_UserLocation>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserLocation&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,latitude,longitude);
+
+@override
+String toString() {
+  return 'UserLocation(latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UserLocationCopyWith<$Res> implements $UserLocationCopyWith<$Res> {
+  factory _$UserLocationCopyWith(_UserLocation value, $Res Function(_UserLocation) _then) = __$UserLocationCopyWithImpl;
+@override @useResult
+$Res call({
+ double latitude, double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class __$UserLocationCopyWithImpl<$Res>
+    implements _$UserLocationCopyWith<$Res> {
+  __$UserLocationCopyWithImpl(this._self, this._then);
+
+  final _UserLocation _self;
+  final $Res Function(_UserLocation) _then;
+
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,}) {
+  return _then(_UserLocation(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+
+}
+
+/// @nodoc
 mixin _$TypeCas {
 
  int get idCas; String get type;
@@ -458,6 +633,136 @@ class __$TypeCasCopyWithImpl<$Res>
   return _then(_TypeCas(
 idCas: null == idCas ? _self.idCas : idCas // ignore: cast_nullable_to_non_nullable
 as int,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+mixin _$Degree {
+
+ int get id; String get typeDegree;
+/// Create a copy of Degree
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DegreeCopyWith<Degree> get copyWith => _$DegreeCopyWithImpl<Degree>(this as Degree, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Degree&&(identical(other.id, id) || other.id == id)&&(identical(other.typeDegree, typeDegree) || other.typeDegree == typeDegree));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,id,typeDegree);
+
+@override
+String toString() {
+  return 'Degree(id: $id, typeDegree: $typeDegree)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $DegreeCopyWith<$Res>  {
+  factory $DegreeCopyWith(Degree value, $Res Function(Degree) _then) = _$DegreeCopyWithImpl;
+@useResult
+$Res call({
+ int id, String typeDegree
+});
+
+
+
+
+}
+/// @nodoc
+class _$DegreeCopyWithImpl<$Res>
+    implements $DegreeCopyWith<$Res> {
+  _$DegreeCopyWithImpl(this._self, this._then);
+
+  final Degree _self;
+  final $Res Function(Degree) _then;
+
+/// Create a copy of Degree
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? typeDegree = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int,typeDegree: null == typeDegree ? _self.typeDegree : typeDegree // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// @nodoc
+
+
+class _Degree implements Degree {
+  const _Degree({required this.id, required this.typeDegree});
+  
+
+@override final  int id;
+@override final  String typeDegree;
+
+/// Create a copy of Degree
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$DegreeCopyWith<_Degree> get copyWith => __$DegreeCopyWithImpl<_Degree>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Degree&&(identical(other.id, id) || other.id == id)&&(identical(other.typeDegree, typeDegree) || other.typeDegree == typeDegree));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,id,typeDegree);
+
+@override
+String toString() {
+  return 'Degree(id: $id, typeDegree: $typeDegree)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$DegreeCopyWith<$Res> implements $DegreeCopyWith<$Res> {
+  factory _$DegreeCopyWith(_Degree value, $Res Function(_Degree) _then) = __$DegreeCopyWithImpl;
+@override @useResult
+$Res call({
+ int id, String typeDegree
+});
+
+
+
+
+}
+/// @nodoc
+class __$DegreeCopyWithImpl<$Res>
+    implements _$DegreeCopyWith<$Res> {
+  __$DegreeCopyWithImpl(this._self, this._then);
+
+  final _Degree _self;
+  final $Res Function(_Degree) _then;
+
+/// Create a copy of Degree
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? typeDegree = null,}) {
+  return _then(_Degree(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int,typeDegree: null == typeDegree ? _self.typeDegree : typeDegree // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
