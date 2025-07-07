@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gestion_cas/features/home_page/domain/model/all_incident_model.dart';
-import 'package:gestion_cas/features/update_incident/presentation/controller/update_incident_controller.dart';
 import 'package:gestion_cas/features/update_incident/presentation/widgets/update_incident_form.dart';
 
 class UpdateIncidentScreen extends ConsumerStatefulWidget {

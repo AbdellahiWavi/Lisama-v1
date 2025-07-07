@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/add_incident_model.dart';
 import 'package:gestion_cas/features/upload_media/presentation/controller/upload_media_controller.dart';
 import 'package:go_router/go_router.dart';
 

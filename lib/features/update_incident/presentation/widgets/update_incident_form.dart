@@ -237,6 +237,10 @@ class UpdateIncidentFormState extends ConsumerState<UpdateIncidentForm> {
       if (_typeCasModel == null) errors.add("Veuillez choisir un type de signalement");
       if (selectedLocationProvider_ == null) {
         if (_lat == 0 || _lon == 0) errors.add("Veuillez préciser le lieu de l'incident");
+      } else if (_lat == 0 && _lon == 0){
+        _lat = widget.incidentModel.userLocation.latitude;
+        _lon = widget.incidentModel.userLocation.longitude;
+        _city = widget.incidentModel.county ?? '';
       }
       if (_url == null || _url == '') {
         if (file == null || file!.path.isEmpty) errors.add("Veuillez prendre au moins une image");
