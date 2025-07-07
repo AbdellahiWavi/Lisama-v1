@@ -11,7 +11,10 @@ abstract class AllIncidentModel with _$AllIncidentModel {
     required DateTime dateCreation,
     required dynamic dateTraitement,
     required String status,
+    required UserLocation userLocation,
+    required String? county,
     required String url,
+    required Degree degree,
     required TypeCas typeCas,
     required Client client,
   }) = _AllIncidentModel;
@@ -30,10 +33,29 @@ abstract class Client with _$Client {
 }
 
 @freezed
+abstract class UserLocation with _$UserLocation {
+
+  const factory UserLocation({
+    required double latitude,
+    required double longitude
+  }) = _UserLocation;
+
+}
+
+@freezed
 abstract class TypeCas with _$TypeCas {
   const factory TypeCas({
     required int idCas,
     required String type,
   }) = _TypeCas;
+
+}
+
+@freezed
+abstract class Degree with _$Degree {
+  const factory Degree({
+    required int id,
+    required String typeDegree,
+  }) = _Degree;
 
 }

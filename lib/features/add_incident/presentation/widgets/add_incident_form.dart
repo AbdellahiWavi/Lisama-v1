@@ -3,29 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gestion_cas/common/global_message_service/global_message_service.dart';
 import 'package:gestion_cas/features/add_incident/data/dtos/request/request_incident/add_incident_request.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_client/get_client_model.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_degree/degree_model.dart';
-import 'package:gestion_cas/features/add_incident/domain/model/model_type_cas/type_cas_model.dart';
 import 'package:gestion_cas/features/add_incident/presentation/controller/add_incident_controller.dart';
 import 'package:gestion_cas/features/add_incident/presentation/widgets/add_incident_button.dart';
-import 'package:gestion_cas/features/add_incident/presentation/widgets/model_drop_down/type_cas_drop_down.dart';
+import 'package:gestion_cas/features/model_client/get_client_model.dart';
+import 'package:gestion_cas/features/model_degree/degree_model.dart';
+import 'package:gestion_cas/features/model_drop_down/degree_drop_down.dart';
+import 'package:gestion_cas/features/model_drop_down/type_cas_drop_down.dart';
+import 'package:gestion_cas/features/model_type_cas/type_cas_model.dart';
+import 'package:gestion_cas/features/update_incident/presentation/widgets/update_incident_form.dart';
 import 'package:gestion_cas/features/upload_media/presentation/controller/upload_media_controller.dart';
 import 'package:gestion_cas/features/upload_media/presentation/widgets/upload_media_button.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../location_incident/incident_location.dart';
 import '../controller/incident_meta_data_controller.dart';
-import 'model_drop_down/degree_drop_down.dart';
 
 class AddIncidentForm extends ConsumerStatefulWidget {
   const AddIncidentForm({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _AddIncidentFormState();
+      AddIncidentFormState();
 }
 
-class _AddIncidentFormState extends ConsumerState<AddIncidentForm> {
+class AddIncidentFormState extends ConsumerState<AddIncidentForm> {
   late TextEditingController _descriptionController;
   TypeCasModel? _typeCasModel;
   DegreeModel? _degreeModel;
@@ -42,6 +43,8 @@ class _AddIncidentFormState extends ConsumerState<AddIncidentForm> {
     super.initState();
     _descriptionController = TextEditingController();
     Future.microtask(() {
+      ref.read(selectedLocationProvider.notifier).state = null;
+      ref.read(url.notifier).state = '';
       ref.read(incidentMetadataProvider.notifier).loadMetadata();
     });
   }
@@ -212,7 +215,7 @@ class _AddIncidentFormState extends ConsumerState<AddIncidentForm> {
           GlobalMessageService.instance.showMessage(
             "Incident en cours de validation...",
           );
-          _resetForm();
+          resetForm();
 
           ref.read(addIncidentControllerProvider.notifier).resetState();
         }
@@ -259,7 +262,7 @@ class _AddIncidentFormState extends ConsumerState<AddIncidentForm> {
     ref.read(addIncidentControllerProvider.notifier).addIncident();
   }
 
-  void _resetForm() {
+  void resetForm() {
     _descriptionController.clear();
     ref.read(fileProvider.notifier).state = null;
     ref.read(latitude.notifier).state = 0;

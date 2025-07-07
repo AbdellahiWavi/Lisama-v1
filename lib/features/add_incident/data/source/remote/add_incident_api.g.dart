@@ -65,13 +65,12 @@ class _AddIncidentApi implements AddIncidentApi {
     final _result = await _dio.fetch<List<dynamic>>(_options);
     late List<AllTypeCasResponse> _value;
     try {
-      _value =
-          _result.data!
-              .map(
-                (dynamic i) =>
-                    AllTypeCasResponse.fromJson(i as Map<String, dynamic>),
-              )
-              .toList();
+      _value = _result.data!
+          .map(
+            (dynamic i) =>
+                AllTypeCasResponse.fromJson(i as Map<String, dynamic>),
+          )
+          .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -98,13 +97,12 @@ class _AddIncidentApi implements AddIncidentApi {
     final _result = await _dio.fetch<List<dynamic>>(_options);
     late List<AllDegreeResponse> _value;
     try {
-      _value =
-          _result.data!
-              .map(
-                (dynamic i) =>
-                    AllDegreeResponse.fromJson(i as Map<String, dynamic>),
-              )
-              .toList();
+      _value = _result.data!
+          .map(
+            (dynamic i) =>
+                AllDegreeResponse.fromJson(i as Map<String, dynamic>),
+          )
+          .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

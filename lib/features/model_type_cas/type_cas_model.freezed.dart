@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TypeCasModel {
 
- int get idCas; String get type; bool get active;
+ int get idCas; String get type; bool? get active;
 /// Create a copy of TypeCasModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -46,7 +46,7 @@ abstract mixin class $TypeCasModelCopyWith<$Res>  {
   factory $TypeCasModelCopyWith(TypeCasModel value, $Res Function(TypeCasModel) _then) = _$TypeCasModelCopyWithImpl;
 @useResult
 $Res call({
- int idCas, String type, bool active
+ int idCas, String type, bool? active
 });
 
 
@@ -63,12 +63,12 @@ class _$TypeCasModelCopyWithImpl<$Res>
 
 /// Create a copy of TypeCasModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? idCas = null,Object? type = null,Object? active = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? idCas = null,Object? type = null,Object? active = freezed,}) {
   return _then(_self.copyWith(
 idCas: null == idCas ? _self.idCas : idCas // ignore: cast_nullable_to_non_nullable
 as int,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,active: null == active ? _self.active : active // ignore: cast_nullable_to_non_nullable
-as bool,
+as String,active: freezed == active ? _self.active : active // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 
@@ -84,7 +84,7 @@ class _TypeCasModel implements TypeCasModel {
 
 @override final  int idCas;
 @override final  String type;
-@override final  bool active;
+@override final  bool? active;
 
 /// Create a copy of TypeCasModel
 /// with the given fields replaced by the non-null parameter values.
@@ -116,7 +116,7 @@ abstract mixin class _$TypeCasModelCopyWith<$Res> implements $TypeCasModelCopyWi
   factory _$TypeCasModelCopyWith(_TypeCasModel value, $Res Function(_TypeCasModel) _then) = __$TypeCasModelCopyWithImpl;
 @override @useResult
 $Res call({
- int idCas, String type, bool active
+ int idCas, String type, bool? active
 });
 
 
@@ -133,12 +133,12 @@ class __$TypeCasModelCopyWithImpl<$Res>
 
 /// Create a copy of TypeCasModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? idCas = null,Object? type = null,Object? active = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? idCas = null,Object? type = null,Object? active = freezed,}) {
   return _then(_TypeCasModel(
 idCas: null == idCas ? _self.idCas : idCas // ignore: cast_nullable_to_non_nullable
 as int,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,active: null == active ? _self.active : active // ignore: cast_nullable_to_non_nullable
-as bool,
+as String,active: freezed == active ? _self.active : active // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 

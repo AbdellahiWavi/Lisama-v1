@@ -1,8 +1,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gestion_cas/features/add_incident/domain/model/add_incident_model.dart';
 import 'package:gestion_cas/features/upload_media/presentation/controller/upload_media_controller.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../update_incident/presentation/widgets/update_incident_form.dart';
 
 // provider pour stocker l'image temporairement
 final fileProvider = StateProvider<File?>((ref) => null);
@@ -16,6 +19,12 @@ class UploadMediaButton extends ConsumerStatefulWidget {
 
 class _UploadMediaButtonState extends ConsumerState<UploadMediaButton> {
   bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    ref.read(url.notifier);
+  }
 
   Future<void> handleUpload({
     required BuildContext context,
@@ -69,6 +78,7 @@ class _UploadMediaButtonState extends ConsumerState<UploadMediaButton> {
   @override
   Widget build(BuildContext context) {
     final selectedFile = ref.watch(fileProvider);
+    final url_ = ref.watch(url);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,10 +107,32 @@ class _UploadMediaButtonState extends ConsumerState<UploadMediaButton> {
                     ref.read(fileProvider.notifier).state = null;
                   },
                   icon: const Icon(Icons.delete, color: Colors.red),
-                  label: const Text("Supprimer l'image", style: TextStyle(color: Colors.red)),
+                  label: const Text(
+                    "Supprimer l'image",
+                    style: TextStyle(color: Colors.red),
+                  ),
                 ),
               ],
             ),
+          )
+        else if (url_.isNotEmpty)
+          Column(
+            children: [
+              Center(
+                child: Image.network(ref.watch(url), width: 100, height: 100),
+              ),
+              const SizedBox(height: 10),
+              TextButton.icon(
+                onPressed: () {
+                  ref.read(url.notifier).state = '';
+                },
+                icon: const Icon(Icons.delete, color: Colors.red),
+                label: const Text(
+                  "Supprimer l'image",
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
+            ],
           )
         else
           Center(
@@ -113,10 +145,16 @@ class _UploadMediaButtonState extends ConsumerState<UploadMediaButton> {
                 );
               },
               icon: const Icon(Icons.camera_alt, color: Colors.white70),
-              label: const Text("Ajouter une image", style: TextStyle(color: Colors.white),),
+              label: const Text(
+                "Ajouter une image",
+                style: TextStyle(color: Colors.white),
+              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue.shade800,
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -135,35 +173,42 @@ class _UploadMediaButtonState extends ConsumerState<UploadMediaButton> {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       height: 150,
-      child: isLoading
-          ? const Center(child: CircularProgressIndicator.adaptive())
-          : Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          buildOption(
-            icon: Icons.camera_outlined,
-            label: "Caméra",
-            onTap: () => handleUpload(
-              context: context,
-              uploadMethod: () => ref
-                  .read(uploadMediaControllerProvider)
-                  .uploadMediaFromCamera(),
-              successMessage: "Image prise avec succès",
-            ),
-          ),
-          buildOption(
-            icon: Icons.photo_library_outlined,
-            label: "Galerie",
-            onTap: () => handleUpload(
-              context: context,
-              uploadMethod: () => ref
-                  .read(uploadMediaControllerProvider)
-                  .uploadMediaFromGallery(),
-              successMessage: "Image sélectionnée avec succès",
-            ),
-          ),
-        ],
-      ),
+      child:
+          isLoading
+              ? const Center(child: CircularProgressIndicator.adaptive())
+              : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  buildOption(
+                    icon: Icons.camera_outlined,
+                    label: "Caméra",
+                    onTap:
+                        () => handleUpload(
+                          context: context,
+                          uploadMethod:
+                              () =>
+                                  ref
+                                      .read(uploadMediaControllerProvider)
+                                      .uploadMediaFromCamera(),
+                          successMessage: "Image prise avec succès",
+                        ),
+                  ),
+                  buildOption(
+                    icon: Icons.photo_library_outlined,
+                    label: "Galerie",
+                    onTap:
+                        () => handleUpload(
+                          context: context,
+                          uploadMethod:
+                              () =>
+                                  ref
+                                      .read(uploadMediaControllerProvider)
+                                      .uploadMediaFromGallery(),
+                          successMessage: "Image sélectionnée avec succès",
+                        ),
+                  ),
+                ],
+              ),
     );
   }
 

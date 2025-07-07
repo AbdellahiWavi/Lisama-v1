@@ -10,6 +10,7 @@ import 'marker_notifier.dart';
 final latitude = StateProvider<double>((ref) => 0);
 final longitude = StateProvider<double>((ref) => 0);
 final city = StateProvider<String>((ref) => '');
+final selectedLocationProvider = StateProvider<LatLng?>((ref) => null);
 
 class IncidentLocation extends ConsumerStatefulWidget {
   const IncidentLocation({super.key});
@@ -27,6 +28,7 @@ class _IncidentLocationState extends ConsumerState<IncidentLocation> {
   LatLng? _destination;
   LatLng? _currentPosition;
   LatLng? _incidentLocation;
+  LatLng? _previousLocation;
 
   @override
   void initState() {
@@ -37,11 +39,24 @@ class _IncidentLocationState extends ConsumerState<IncidentLocation> {
   Future<void> _initLocation() async {
     await _getCurrentLocation.init();
     if (!mounted) return;
+    final previous = ref.read(selectedLocationProvider);
+
+    if (previous != null) {
+      setState(() {
+        _previousLocation = previous;
+        ref.read(markerProvider.notifier).setMarkerAt(previous);
+      });
+    }
+
     final position = _getCurrentLocation.currentLocation;
     if (position != null) {
       setState(() {
         _currentPosition = LatLng(position.latitude, position.longitude);
-        ref.read(markerProvider.notifier).setMarkerAt(_currentPosition!);
+        if (previous == null) {
+          // Première fois : on initialise à la position actuelle
+          _previousLocation = _currentPosition;
+          ref.read(markerProvider.notifier).setMarkerAt(_currentPosition!);
+        }
       });
     }
   }
@@ -60,8 +75,7 @@ class _IncidentLocationState extends ConsumerState<IncidentLocation> {
       );
       if (response.statusCode == 200 && response.data != null) {
         final address = response.data['address'];
-        debugPrint(address);
-        return address['suburb'] ?? address['county'] ?? address['state'] ?? address['city'] ?? address['country'];
+        return address['suburb'] ?? address['county'] ?? address['state'] ?? address['city'] ?? address['country'] as String?;
       }
     } catch (e) {
       debugPrint("Erreur reverse geocoding: $e");
@@ -111,6 +125,9 @@ class _IncidentLocationState extends ConsumerState<IncidentLocation> {
     ref.read(longitude.notifier).state = selected.longitude;
     final address = await _getAddressFromCoordinates(selected.latitude, selected.longitude);
     ref.read(city.notifier).state = address ?? '';
+
+    ref.read(selectedLocationProvider.notifier).state = selected;
+
     if (!mounted) return;
     Navigator.pop(context);
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -160,7 +177,7 @@ class _IncidentLocationState extends ConsumerState<IncidentLocation> {
     return FlutterMap(
       mapController: _mapController,
       options: MapOptions(
-        initialCenter: currentLatLng!,
+        initialCenter: _previousLocation ?? currentLatLng!,
         initialZoom: 14,
         onTap: (_, point) {
           setState(() => _incidentLocation = point);

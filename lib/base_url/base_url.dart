@@ -1,2 +1,2 @@
 
-const gestionCasApi = "https://springgestioncasapi-production.up.railway.app/gestiondecas";
+const gestionCasApi = "http://192.168.5.219:8080/gestiondecas";

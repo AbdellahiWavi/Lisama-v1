@@ -10,6 +10,8 @@ abstract class AllIncidentResponse with _$AllIncidentResponse {
     required int id,
     @JsonKey(name: "decrireAction")
     required String decrireAction,
+    @JsonKey(name: "userLocation")
+    required UserLocation userLocation,
     @JsonKey(name: "url")
     required String url,
     @JsonKey(name: "county")
@@ -78,4 +80,16 @@ abstract class TypeCas with _$TypeCas {
   }) = _TypeCas;
 
   factory TypeCas.fromJson(Map<String, dynamic> json) => _$TypeCasFromJson(json);
+}
+
+@freezed
+abstract class UserLocation with _$UserLocation {
+  const factory UserLocation({
+    @JsonKey(name: "latitude")
+    required double latitude,
+    @JsonKey(name: "longitude")
+    required double longitude,
+  }) = _UserLocation;
+
+  factory UserLocation.fromJson(Map<String, dynamic> json) => _$UserLocationFromJson(json);
 }

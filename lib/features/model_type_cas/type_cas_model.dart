@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:gestion_cas/features/add_incident/data/dtos/request/request_incident/add_incident_request.dart';
+import 'package:gestion_cas/features/shared/models/models.dart';
 
 part 'type_cas_model.freezed.dart';
 
@@ -9,7 +9,7 @@ abstract class TypeCasModel with _$TypeCasModel {
   const factory TypeCasModel({
     required int idCas,
     required String type,
-    required bool active
+    required bool? active
   }) = _TypeCasModel;
 
 }

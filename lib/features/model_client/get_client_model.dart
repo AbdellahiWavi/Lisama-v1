@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:gestion_cas/features/add_incident/data/dtos/request/request_incident/add_incident_request.dart';
+import 'package:gestion_cas/features/shared/models/models.dart';
 
 part 'get_client_model.freezed.dart';
 
